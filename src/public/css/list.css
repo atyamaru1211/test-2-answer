@@ -6,10 +6,10 @@ body{
 }
 .left-contents{
     margin-left: 50px;
-    width: 900px;
+    width: 300px;
 }
 .keyword{
-    width: 80%;
+    width: 240px;
     height: 40px;
     border-radius: 20px;
     border-width: thin;
@@ -19,7 +19,7 @@ body{
     border: none;
     background-color: rgb(255, 200, 0);
     border-radius: 5px;
-    width: 80%;
+    width: 240px;
     height: 40px;
     margin-top: 20px;
     box-shadow: 4px 4px rgb(224, 224, 224);
@@ -32,7 +32,7 @@ body{
 }
 .select{
     display: block;
-    width: 80%;
+    width: 240px;
     height: 40px;
     margin-top: 20px;
 }
@@ -55,9 +55,11 @@ body{
 .product-contents{
     display: flex;
     flex-wrap: wrap;
+    width: 900px;
 }
 .product-content{
     margin: 3px;
+    width: 270px;
     box-shadow: 4px 4px rgb(224, 224, 224);
     position: relative;
 }
@@ -75,6 +77,6 @@ body{
 }
 .detail-content{
     display: flex;
-    background-color: aqua;
+    background-color: white;
     height: 45px;
 }

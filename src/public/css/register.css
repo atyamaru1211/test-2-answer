@@ -1,0 +1,66 @@
+body {
+    background-color: rgb(245, 245, 245);
+}
+.main-contents{
+    width: 650px;
+    background-color: rgb(245, 245, 245);
+    margin-left: auto;
+    margin-right: auto;
+}
+.label{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.text{
+    display: inline-block;
+    width: 650px;
+    height: 30px;
+}
+.textarea{
+    width: 650px;
+    height: 150px;
+}
+::placeholder {
+    color: grey;
+}
+.require{
+    text-align: center;
+    display: inline-block;
+    color: white;
+    background-color: red;
+    width: 40px;
+    height: 18px;
+    font-size: 13px;
+    margin-left: 10px;
+}
+.note{
+    color: red;
+    width: 30px;
+    height: 15px;
+    font-size: 13px;
+    margin-left: 10px;
+}
+.button-content {
+    margin-top: 20px;
+    text-align: center;
+}
+.back{
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    color: black;
+    background-color: rgb(214, 214, 214);
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 4px 4px rgb(224, 224, 224);
+    padding-top: 8px;
+}
+.button-register{
+    width: 200px;
+    height: 40px;
+    border: none;
+    background-color: gold;
+    border-radius: 5px;
+    box-shadow: 4px 4px rgb(224, 224, 224);
+}
