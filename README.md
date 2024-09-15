@@ -54,7 +54,7 @@ php artisan storage:link
 
 ## テーブル設計
 ![alt](table_1.png)
-![alt](table_2.png)
+![alt](table_3.png)
 
 ## ER図
 ![alt](er.png)
