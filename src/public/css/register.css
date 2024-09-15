@@ -67,3 +67,8 @@ body {
 .input_error_message{
     color: red;
 }
+.reader_image{
+    width: 350px;
+    height: 200px;
+    margin-bottom: 20px;
+}

@@ -27,6 +27,7 @@
                 </span>
             @enderror
             <label class="label">商品画像<span class="require">必須</span></label>
+            <output id="list" class="image_output"></output>
             <input type="file" id="product_image" class="image" name="product_image">
             @error('product_image')
                 <span class="input_error">
@@ -56,5 +57,32 @@
             </div>
         </form>
     </main>
+    <script>
+        document.getElementById('product_image').onchange = function(event){
+            
+            initializeFiles();
+
+            var files = event.target.files;
+
+            for (var i = 0, f; f = files[i]; i++) {
+                var reader = new FileReader;
+                reader.readAsDataURL(f);
+
+                reader.onload = (function(theFile) {
+                    return function (e) {
+                        var div = document.createElement('div');
+                        div.className = 'reader_file';
+                        div.innerHTML += '<img class="reader_image" src="' + e.target.result + '" />';
+                        document.getElementById('list').insertBefore(div, null);
+                    }
+                })(f);
+            }
+        };
+
+        function initializeFiles() {
+            document.getElementById('list').innerHTML = '';
+        }
+
+    </script>
 </body>
 </html>
