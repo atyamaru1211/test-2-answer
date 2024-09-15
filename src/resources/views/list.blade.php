@@ -22,6 +22,16 @@
                     <option value="low_price">低い順に表示</option>
                 </select>
             </form>
+            @if(@isset($sort)&& $sort != "")
+                <div class="sort_contents">
+                    <p class="searched_data">{{$sort}}</p>
+                    <div class="close-content">
+                        <a href="/products">
+                            <img src="{{ asset('/images/close-icon.png') }}"  alt="閉じるアイコン" class="img-close-icon"/>
+                        </a>
+                    </div>
+                </div>
+            @endif
         </div>
         <div class="right-contents">
             <p class="message">{{session('message')}}</p>
@@ -29,7 +39,7 @@
             <div class="product-contents">
                 @foreach ($products as $product)
                     <div class="product-content">
-                        <a href="/products/{{$product->id}}" class="product-link"></a>
+                        <a href="/products/detail/{{$product->id}}" class="product-link"></a>
                         <img src="{{ asset($product->image) }}"  alt="商品画像" class="img-content"/>
                         <div class="detail-content">
                             <p>{{$product->name}}</p>
@@ -38,7 +48,9 @@
                     </div>
                 @endforeach
             </div>
-            {{ $products->links() }}
+            <div class="pagination-content">
+                {{ $products->appends(request()->query())->links('pagination::bootstrap-4') }}
+            </div>
         </div>
     </div>
 </body>

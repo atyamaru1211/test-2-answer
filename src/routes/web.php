@@ -18,6 +18,7 @@ use App\Http\Controllers\SeasonController;
 Route::get('/products', [ProductController::class, 'getProducts']);
 Route::get('/products/register', [SeasonController::class, 'getRegister']);
 Route::post('/product/upload', [ProductController::class, 'upload']);
-Route::get('/products/{product_id}', [ProductController::class, 'getDetail']);
+Route::get('/products/detail/{product_id}', [ProductController::class, 'getDetail']);
+Route::get('/products/search', [ProductController::class, 'getSearch']);
 Route::post('/products/search', [ProductController::class, 'postSearch']);
 Route::get('/products/{product_id}/delete', [ProductController::class, 'postDelete']);

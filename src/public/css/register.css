@@ -64,3 +64,6 @@ body {
     border-radius: 5px;
     box-shadow: 4px 4px rgb(224, 224, 224);
 }
+.input_error_message{
+    color: red;
+}

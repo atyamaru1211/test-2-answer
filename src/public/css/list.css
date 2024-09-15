@@ -36,6 +36,28 @@ body{
     height: 40px;
     margin-top: 20px;
 }
+.sort_contents{
+    display: flex;
+    width: 150px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 20px;
+    border: rgb(255, 200, 0) solid;
+}
+.searched_data{
+    margin-left: 10px;
+    margin-top: 7px;
+}
+.close-content{
+    width: 20px;
+    height: 20px;
+}
+.img-close-icon{
+    margin-left: 10px;
+    margin-top: 8px;
+    width: 20px;
+    height: 20px;
+}
 .add-button{
     display: inline-block;
     text-decoration: none;
@@ -79,4 +101,38 @@ body{
     display: flex;
     background-color: white;
     height: 45px;
+}
+.pagination-content{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.pagination{
+    display: flex;
+    margin-left: -90px;
+}
+.page-item-active {
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: rgb(255, 200, 0);
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 7px;
+}
+.page-item{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 7px;
+}
+.page-link{
+    text-decoration: none;
+    color: black;
+}
+.page-link-active{
+    color: white;
 }

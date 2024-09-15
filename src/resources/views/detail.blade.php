@@ -24,7 +24,13 @@
                     <label class="season-label">季節</label>
                     @foreach ($seasons as $season)
                         <label for="season">{{$season->name}}</label>
-                        <input type="checkbox" id="season" value="{{$season->id}}">
+                        @foreach ($product->seasons->id as $season_id)
+                            @if($season_id = $season->id)
+                                <input type="checkbox" id="season" value="{{$season->id}}" checked>
+                            @else
+                                <input type="checkbox" id="season" value="{{$season->id}}">
+                            @endif
+                        @endforeach
                     @endforeach
                 </div>
             </div>
