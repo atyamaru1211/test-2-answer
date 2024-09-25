@@ -14,10 +14,13 @@ class Product extends Model
         return $this->belongsToMany(Season::class,'product_season','product_id','season_id',);
     }
 
-    public function checkSeason($season)
+    public function checkSeason($season,$product)
     { 
-        $productSeasons = $this->seasons();
         $season_id = $season->id;
+        $product_id = $product->id;
+
+        $product_data = Product::find($product_id);
+        $productSeasons = $product_data->seasons; 
         
         foreach ($productSeasons as $productSeason) 
         {
@@ -27,14 +30,14 @@ class Product extends Model
 
                 return $returnTxt;
             }
-            else
-            {
-                $returnTxt ="no";
-
-                return $returnTxt;
-            }
         }
         
+        if($productSeason->id != $season_id)
+        {
+            $returnTxt ="no";
+
+            return $returnTxt;
+        }
     }
 
 }
