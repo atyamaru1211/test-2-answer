@@ -59,7 +59,7 @@
     </main>
     <script>
         document.getElementById('product_image').onchange = function(event){
-            
+
             initializeFiles();
 
             var files = event.target.files;

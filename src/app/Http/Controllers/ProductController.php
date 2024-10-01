@@ -14,7 +14,7 @@ class ProductController extends Controller
     public function getProducts()
     {
         $products = Product::all();
-        $perPage = 6; 
+        $perPage = 6;
         $page = Paginator::resolveCurrentPage('page');
         $pageData = $products->slice(($page - 1) * $perPage, $perPage);
         $options = [
@@ -22,7 +22,7 @@ class ProductController extends Controller
             'pageName' => 'page'
         ];
 
-        $products = new LengthAwarePaginator($pageData, $products->count(), $perPage, $page, $options); 
+        $products = new LengthAwarePaginator($pageData, $products->count(), $perPage, $page, $options);
 
         return view('list', compact('products'));
     }
@@ -40,9 +40,9 @@ class ProductController extends Controller
         $product_data->image= 'storage/' . $dir . '/' . $file_name;
         $product_data->description= $_POST["product_description"];
         $product_data->save();
-        
+
         $products = Product::all();
-        $perPage = 6; 
+        $perPage = 6;
         $page = Paginator::resolveCurrentPage('page');
         $pageData = $products->slice(($page - 1) * $perPage, $perPage);
         $options = [
@@ -50,7 +50,7 @@ class ProductController extends Controller
             'pageName' => 'page'
         ];
 
-        $products = new LengthAwarePaginator($pageData, $products->count(), $perPage, $page, $options); 
+        $products = new LengthAwarePaginator($pageData, $products->count(), $perPage, $page, $options);
 
         return redirect('/products');
     }
@@ -59,7 +59,7 @@ class ProductController extends Controller
     {
         $query = Product::query();
         $sort = $request->input('sort');
-    
+
         if ($sort == "高い順に表示") {
 
             $sort = "high_price";
@@ -81,7 +81,7 @@ class ProductController extends Controller
             $query->where('name','like','%'.$keyword.'%');
 
         }
-        
+
         $query_products = $query->get();
 
         if($sort == "high_price"){
@@ -102,7 +102,7 @@ class ProductController extends Controller
 
         }
 
-        $perPage = 6; 
+        $perPage = 6;
         $page = Paginator::resolveCurrentPage('page');
         $pageData = $products->slice(($page - 1) * $perPage, $perPage);
         $options = [
@@ -110,7 +110,7 @@ class ProductController extends Controller
             'pageName' => 'page'
         ];
 
-        $products = new LengthAwarePaginator($pageData, $products->count(), $perPage, $page, $options); 
+        $products = new LengthAwarePaginator($pageData, $products->count(), $perPage, $page, $options);
 
         $seasons = Season::all();
 
@@ -122,7 +122,7 @@ class ProductController extends Controller
     {
         $query = Product::query();
         $sort = $request->input('sort');
-        
+
         if ($request->filled('keyword')) {
 
             $keyword = $request->input('keyword');
@@ -150,7 +150,7 @@ class ProductController extends Controller
 
         }
 
-        $perPage = 6; 
+        $perPage = 6;
         $page = Paginator::resolveCurrentPage('page');
         $pageData = $products->slice(($page - 1) * $perPage, $perPage);
         $options = [
@@ -158,7 +158,7 @@ class ProductController extends Controller
             'pageName' => 'page'
         ];
 
-        $products = new LengthAwarePaginator($pageData, $products->count(), $perPage, $page, $options); 
+        $products = new LengthAwarePaginator($pageData, $products->count(), $perPage, $page, $options);
 
         $products->appends(['sort' => $sort]);
 
