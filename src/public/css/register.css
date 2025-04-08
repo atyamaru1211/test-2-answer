@@ -2,7 +2,7 @@ body {
     background-color: rgb(245, 245, 245);
 }
 .main-contents{
-    width: 650px;
+    width: 650px; /*もうここで、幅を決めちゃう。中央揃えにもしちゃう*/
     background-color: rgb(245, 245, 245);
     margin-left: auto;
     margin-right: auto;
@@ -21,7 +21,7 @@ body {
     width: 650px;
     height: 150px;
 }
-::placeholder {
+::placeholder { /*inputやtextareaのplaceholderテキスト*/
     color: grey;
 }
 .require{
